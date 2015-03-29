@@ -9,7 +9,7 @@ module.exports = function(app) {
     var list = {
       initialize: function() {
         // Set page title
-        title.setTitle($state.current.name + ' | MailBox')
+        title.setTitle(firstToUpperCase($state.current.name) + ' | MailBox')
         // Get email data
         $scope.emails = mail.constructModal(mail[$state.current.name])
         // Set page

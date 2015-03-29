@@ -10,4 +10,5 @@ module.exports = function(app) {
       $scope.$route = toState.name
     })
   })
+
 }
