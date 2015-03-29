@@ -1,0 +1,63 @@
+// =============================================================================
+
+// Title:
+// Structure
+
+// Description:
+// Page structure styling.
+
+// =============================================================================
+
+*
+  box-sizing: border-box;
+
+html,
+body
+  height: 100%;
+  color: $textColour;
+  font-size: 100%;
+  font-family: $textFont;
+  margin: 0;
+  background: $backgroundColour;
+  -webkit-text-size-adjust: none;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+
+img,
+video
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  vertical-align: top;
+
+::selection
+  background: #fffbbb;
+  color: #000;
+
+::-moz-selection
+  background: #fffbbb;
+  color: #000;
+
+.page-content
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+
+@media (max-width: 800px)
+
+  .page-content
+    left: 0;
+
+  .page-content--menu-open
+    -webkit-transform: translateX(110px)
+    transform: translateX(110px)
+
+@media (min-width: 801px)
+
+  .page-content
+    left: 80px;

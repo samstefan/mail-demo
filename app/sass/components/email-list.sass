@@ -1,0 +1,141 @@
+// =============================================================================
+
+// Title:
+// Email list
+
+// Description:
+// Styling for the email list
+
+// =============================================================================
+
+.email-list
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-right: 1px solid #eaeeef;
+  overflow: auto;
+  background: $backgroundColour;
+  -webkit-overflow-scrolling: touch;
+
+.email-list__header
+  width: 100%;
+  float: left;
+  top: 0;
+  padding: 20px;
+  display: none;
+  position: fixed;
+  background: $backgroundColour;
+  border-bottom: 1px solid #eaeeef;
+  z-index: 2;
+
+.email-list__header__hamburg-button
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+
+.email-list__header__hamburg-button-01,
+.email-list__header__hamburg-button-02,
+.email-list__header__hamburg-button-03
+  display: block;
+  width: 100%;
+  height: 5px;
+  margin: 4px 0;
+  background: #474747;
+  -webkit-transition: -webkit-transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+
+.email-list__header__hamburg-button--open
+
+  .email-list__header__hamburg-button-01
+    -webkit-transform: rotate(45deg) translateX(6px) translateY(6px);
+    transform: rotate(45deg) translateX(6px) translateY(6px);
+
+  .email-list__header__hamburg-button-02
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+
+  .email-list__header__hamburg-button-03
+    opacity: 0;
+
+.email-list__header__title
+  width: 100%;
+  text-align: center;
+  font-family: $headingFont;
+  font-size: 1.1em;
+  font-weight: 700;
+
+.email-list__email
+  width: 100%;
+  float: left;
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px solid #eaeeef;
+
+  &:hover
+    background: #F7F7F7;
+
+  a
+    width: 100%;
+    padding: 20px;
+    float: left;
+    color: $textColour;
+
+.email-list__email--active
+  background: #297EA1;
+
+  &:hover
+    background: lighten(#297EA1, 5%);
+
+  a
+    color: $backgroundColour;
+
+  .email-list__email__summary,
+  .email-list__email__date
+    color: lighten($backgroundColour, 20%);
+
+.email-list__email__from,
+.email-list__email__to
+  width: 100%;
+  float: left;
+  margin: 0 0 10px 0;
+  font-family: $headingFont;
+  font-weight: 700;
+
+.email-list__email__subject
+  width: 100%;
+  float: left;
+  margin: 0 0 10px 0;
+  font-size: 1em;
+  font-family: $headingFont;
+  font-weight: 700;
+
+.email-list__email__date
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.8em;
+  font-family: $headingFont;
+  color: lighten($textColour, 30%);
+
+.email-list__email__summary
+  width: 100%;
+  float: left;
+  line-height: 120%;
+  color: lighten($textColour, 20%);
+
+@media (max-width: 800px)
+
+  .email-list
+    width: 100%;
+    padding: 57px 0 0 0;
+
+  .email-list__header
+    display: block;
+
+@media (min-width: 801px)
+
+  .email-list
+    width: 320px;

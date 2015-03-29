@@ -1,0 +1,110 @@
+// =============================================================================
+
+// Title:
+// Navigation
+
+// Description:
+// Styling for page navigation
+
+// =============================================================================
+
+.page-navigation
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  background: #1c262b;
+
+.page-navigation__links-wrapper
+  font-family: $headingFont;
+  text-align: center;
+  border-bottom: 2px solid #253137;
+  font-size: 0.9em;
+  width: 100%;
+  float: left;
+
+  &:hover
+    background-color: lighten(#1c262b, 2%);
+
+.page-navigation__links-wrapper__link
+  width: 100%;
+  float: left;
+  padding: 52px 0 12px;
+  color: #7d8b91;
+  text-decoration: none;
+
+.page-navigation__links-wrapper__link--active a
+  color: #fff;
+
+.page-navigation__links-wrapper--inbox
+  background: url('./images/icon-inbox.png') no-repeat center 16px;
+
+.page-navigation__links-wrapper--sent
+  background: url('./images/icon-sent.png') no-repeat center 16px;
+
+.page-navigation__links-wrapper--drafts
+  background: url('./images/icon-drafts.png') no-repeat center 16px;
+
+.page-navigation__links-wrapper--spam
+  background: url('./images/icon-spam.png') no-repeat center 16px;
+
+.page-navigation__links-wrapper__link--active
+
+  .page-navigation__links-wrapper--inbox
+    background: url('./images/icon-inbox-active.png') no-repeat center 16px;
+
+  .page-navigation__links-wrapper--sent
+    background: url('./images/icon-sent-active.png') no-repeat center 16px;
+
+  .page-navigation__links-wrapper--drafts
+    background: url('./images/icon-drafts-active.png') no-repeat center 16px;
+
+  .page-navigation__links-wrapper--spam
+    background: url('./images/icon-spam-active.png') no-repeat center 16px;
+
+@media (max-width: 800px)
+
+  .page-navigation
+    width: 110px;
+
+@media (min-width: 801px)
+
+  .page-navigation
+    width: 80px;
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+
+  .page-navigation__links-wrapper--inbox
+    background: url('./images/icon-inbox@2x.png') no-repeat center 16px;
+    background-size: 26px;
+
+  .page-navigation__links-wrapper--sent
+    background: url('./images/icon-sent@2x.png') no-repeat center 16px;
+    background-size: 26px;
+
+  .page-navigation__links-wrapper--drafts
+    background: url('./images/icon-drafts@2x.png') no-repeat center 16px;
+    background-size: 26px;
+
+  .page-navigation__links-wrapper--spam
+    background: url('./images/icon-spam@2x.png') no-repeat center 16px;
+    background-size: 26px;
+
+  .page-navigation__links-wrapper__link--active
+
+    .page-navigation__links-wrapper--inbox
+      background: url('./images/icon-inbox-active@2x.png') no-repeat center 16px;
+      background-size: 26px;
+
+    .page-navigation__links-wrapper--sent
+      background: url('./images/icon-sent-active@2x.png') no-repeat center 16px;
+      background-size: 26px;
+
+    .page-navigation__links-wrapper--drafts
+      background: url('./images/icon-drafts-active@2x.png') no-repeat center 16px;
+      background-size: 26px;
+
+    .page-navigation__links-wrapper--spam
+      background: url('./images/icon-spam-active@2x.png') no-repeat center 16px;
+      background-size: 26px;

@@ -1,0 +1,140 @@
+// =============================================================================
+
+// Title:
+// Email view
+
+// Description:
+// Styling for the email view section
+
+// =============================================================================
+
+.email-view
+  position: absolute;
+  left: 320px;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  overflow-y: auto;
+
+.email-view__subject
+  width: 100%;
+  float: left;
+  padding: 0 20px 20px 0;
+  font-family: $headingFont;
+  border-bottom: 1px solid #eaeeef;
+
+.email-view__recipient
+  width: 100%;
+  float: left;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #eaeeef;
+
+.email-view__recipient__icon
+  width: 50px;
+  height: 50px;
+  float: left;
+  border-radius: 50%;
+  border: 3px solid rgba(3, 3, 3, 0.17);
+
+.email-view__recipient__name
+  float: left;
+  margin: 16px 10px;
+  font-family: $headingFont;
+
+.email-view__recipient__date
+  float: right;
+  margin: 16px 0;
+  font-size: 0.9em;
+  font-family: $headingFont;
+  color: lighten($textColour, 30%);
+
+.email-view__content
+  width: 100%;
+  float: left;
+  line-height: 120%;
+
+.email-view__close
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  background: url('./images/icon-close.png') no-repeat;
+
+@media (max-width: 500px)
+
+  .email-view
+    left: 0;
+    background: $backgroundColour;
+    padding: 20px;
+    z-index: 3;
+
+  .email-view__close
+    display: block;
+    right: 20px;
+    top: 20px;
+
+  .email-view__recipient
+    padding: 10px 0;
+
+  .email-view__subject
+    font-size 1.2em
+
+  .email-view__content
+    font-size: 1em;
+
+@media (min-width: 501px) and (max-width: 800px)
+
+  .email-view
+    left: 0;
+    padding: 35px 50px;
+    background: $backgroundColour;
+    z-index: 3;
+
+  .email-view__close
+    display: block;
+    right: 50px;
+    top: 40px;
+
+  .email-view__recipient
+    padding: 20px 0;
+
+  .email-view__subject
+    font-size: 1.7em;
+
+  .email-view__content
+    font-size: 1.1em;
+
+  .email-view-animate.ng-enter,
+  .email-view-animate.ng-leave
+    transition: opacity ease 0.2s;
+
+  .email-view-animate.ng-enter,
+  .email-view-animate.ng-leave.ng-leave-active
+    opacity: 0;
+
+  .email-view-animate.ng-leave,
+  .email-view-animate.ng-enter.ng-enter-active
+    opacity: 1;
+
+@media (min-width: 801px)
+
+  .email-view
+    padding: 35px 50px;
+    left: 320px;
+
+  .email-view__close
+    display: none;
+
+  .email-view__recipient
+    padding: 20px 0;
+
+  .email-view__subject
+    font-size: 1.7em;
+
+  .email-view__content
+    font-size: 1.1em;
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+
+  .email-view__close
+    background: url('./images/icon-close@2x.png') no-repeat;
+    background-size: 17px;

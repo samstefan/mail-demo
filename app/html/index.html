@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en-gb" ng-app="MailBox" ng-controller="metaCtrl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Mail Box">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title ng-bind="title.title()">Mail Box</title>
+
+    <script src="//use.typekit.net/mwu0uwr.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <nav class="page-navigation" ng-controller="menuCtrl">
+      <ul>
+        <li class="page-navigation__links-wrapper" ng-class="{ 'page-navigation__links-wrapper__link--active': $route == 'inbox' }">
+          <a menu-link ui-sref="inbox" class="page-navigation__links-wrapper__link page-navigation__links-wrapper--inbox">Inbox</a>
+        </li>
+        <li class="page-navigation__links-wrapper" ng-class="{ 'page-navigation__links-wrapper__link--active': $route == 'sent' }">
+          <a menu-link ui-sref="sent" class="page-navigation__links-wrapper__link page-navigation__links-wrapper--sent">Sent</a>
+        </li>
+        <li class="page-navigation__links-wrapper" ng-class="{ 'page-navigation__links-wrapper__link--active': $route == 'drafts' }">
+          <a menu-link ui-sref="drafts" class="page-navigation__links-wrapper__link  page-navigation__links-wrapper--drafts">Drafts</a>
+        </li>
+        <li class="page-navigation__links-wrapper" ng-class="{ 'page-navigation__links-wrapper__link--active': $route == 'spam' }">
+          <a menu-link ui-sref="spam" class="page-navigation__links-wrapper__link  page-navigation__links-wrapper--spam">Spam</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="page-content" ng-controller="pageCtrl" ng-class="{ 'page-content--menu-open': menuOpen }">
+      <div ui-view></div>
+    </div>
+
+    <!-- View template -->
+    <script type="text/ng-template" id="page.html">
+      <ul class="email-list">
+        <header class="email-list__header">
+          <a menu-open class="email-list__header__hamburg-button" href="#" ng-class="{ 'email-list__header__hamburg-button--open': menuOpen }">
+            <span class="email-list__header__hamburg-button-01"></span>
+            <span class="email-list__header__hamburg-button-02"></span>
+            <span class="email-list__header__hamburg-button-03"></span>
+          </a>
+
+          <h2 class="email-list__header__title">{{page}}</h2>
+        </header>
+
+        <li ng-repeat="email in emails" class="email-list__email" ng-class="{ 'email-list__email--active': email.active }">
+          <a email-open href="#">
+            <div ng-if="email.from" class="email-list__email__from">{{email.from}}</div>
+            <div ng-if="email.to" class="email-list__email__to">{{email.to}}</div>
+            <div class="email-list__email__subject">{{email.subject}}</div>
+            <div ng-if="email.dateReceived" class="email-list__email__date">{{email.dateReceived}}</div>
+            <div ng-if="email.dateSent" class="email-list__email__date">{{email.dateSent}}</div>
+            <div class="email-list__email__summary">{{email.summary}}</div>
+          </a>
+        </li>
+      </ul>
+
+      <section ng-if="emailView.show" class="email-view email-view-animate" ng-class="{ 'email-view--open': emailView.show }">
+        <a email-close class="email-view__close" href="#"></a>
+        <header><h2 class="email-view__subject">{{emailView.data.subject}}</h2></header>
+        <div class="email-view__recipient">
+          <div class="email-view__recipient__icon email-view__recipient__icon--{{emailView.data.user.iconClass}}"></div>
+          <div class="email-view__recipient__name">{{emailView.data.user.name}}</div>
+          <div class="email-view__recipient__date">{{emailView.data.dateReceived}}</div>
+          <div class="email-view__recipient__date">{{emailView.data.dateSent}}</div>
+        </div>
+
+        <article class="email-view__content">
+          {{emailView.data.content}}
+        </article>
+      </section>
+    </script>
+
+  </body>
+
+  <script src="/js/plugins.js"></script>
+  <script src="/js/angular.js"></script>
+  <script src="/js/app.js"></script>
+</html>
