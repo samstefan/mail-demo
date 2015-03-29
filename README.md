@@ -1,4 +1,4 @@
-# Mail Demo
+# Mail App Demo
 
 A basic responsive mail app interface built with AngularJS, Browserify and Gulp.js
 
