@@ -83,19 +83,6 @@
     float: left;
     color: $textColour;
 
-.email-list__email--active
-  background: #00c3ff;
-
-  &:hover
-    background: lighten(#00c3ff, 5%);
-
-  a
-    color: $backgroundColour;
-
-  .email-list__email__summary,
-  .email-list__email__date
-    color: lighten($backgroundColour, 20%);
-
 .email-list__email__from,
 .email-list__email__to
   width: 100%;
@@ -139,3 +126,16 @@
 
   .email-list
     width: 320px;
+
+  .email-list__email--active
+    background: #00c3ff;
+
+    &:hover
+      background: lighten(#00c3ff, 5%);
+
+    a
+      color: $backgroundColour;
+
+    .email-list__email__summary,
+    .email-list__email__date
+      color: lighten($backgroundColour, 20%);
